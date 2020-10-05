@@ -1,0 +1,29 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav"
+               fixedInViewport
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'over'"
+               [opened]="false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list *ngFor="let source of sources">
+      <a routerLink="/news/{{source.name}}" mat-list-item><img class="image-icon"
+                                                               style="max-width: 35px; max-height: 35px;"
+                                                               src="/assets/newsIcon.jpg" alt="{{source.name}}">
+        {{ source.name }}</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>News Headlines</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

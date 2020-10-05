@@ -1,0 +1,13 @@
+<div *ngIf="!isLoadingNews && loadedNews.length >= 1 ">
+  <app-article *ngFor="let articleToDisplay of loadedNews" [article]="articleToDisplay"></app-article>
+</div>
+<div class="d-flex justify-content-center">
+  <p *ngIf="isLoadingNews && !error">
+    <mat-spinner></mat-spinner>
+    Loading...
+  </p>
+</div>
+<div class="alert alert-danger" *ngIf="error">
+  <h1>An Error Occurred!</h1>
+  <p>{{ error }}</p>
+</div>

@@ -1,0 +1,7 @@
+<div class="card">
+  <img src="{{article.urlToImage}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{article.title}}</h5>
+    <p class="card-text">{{(article.content.length>6)? (article.content | slice:0:99)+'..':(article.content)}}</p>
+  </div>
+</div>
