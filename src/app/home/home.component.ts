@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {News} from '../models/news.model';
-import {ActivatedRoute, Params} from '@angular/router';
 import {DataService} from '../services/data.service';
 
 @Component({

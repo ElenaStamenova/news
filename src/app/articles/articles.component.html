@@ -1,11 +1,6 @@
 <div class="container" *ngIf="filteredNews.length < 1 && !isLoadingNews">
   <div class="row">
-    <div class="col align-self-center d-flex justify-content-center">
-      <img src="../../assets/error.png" style="max-width: 600px; max-height: 600px;" class=""
-           alt="No news found from this source.">
-    </div>
-    <div class="col-12 text-center">
-    </div>
+      <img  src="../../assets/error.png" class="mx-auto d-block img-fluid" alt="No news found from this source.">
   </div>
 </div>
 <div *ngIf="!isLoadingNews && filteredNews.length >= 1">
